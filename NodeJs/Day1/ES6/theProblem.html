@@ -1,0 +1,34 @@
+<script>
+    //callback problem
+    function Emp(){
+        this.salary = 200;
+        
+        setTimeout(function(){
+            console.log(this.salary);//after 2 seconds it will get executed.. before that e gets created..
+        },2000);
+    }
+
+    //Solving using ES5
+    // function Emp(){
+    //     this.salary = 200;
+    //     var self = this; // is the fix for the problem
+    //     setTimeout(function(){
+    //         console.log(self.salary);
+    //     },2000);
+    // }
+
+    //Solved in ES6 with Arrow
+    function Emp(){
+        this.salary = 200;
+
+        setTimeout(() => {
+            console.log(this.salary);
+        },2000);
+    }
+
+    var e = new Emp();//its executed before the settimeout is done
+
+    
+// Arrow fn: context gets binded at the time of creation of the function
+// Anonymous fn:  context gets binded at the time of invocation of the function
+</script>

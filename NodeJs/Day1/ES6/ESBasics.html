@@ -1,0 +1,66 @@
+<script>
+
+    //let and const
+
+    //for-of vs for-in
+
+    //Destructuring
+
+    //Default Parameters
+
+    //Spread Parameters
+
+    //Arrow Functions
+
+    var square = function(x){
+        return x * x;
+    }
+    
+    var square = (x) => {
+        return x * x;
+    }
+
+    //or
+
+    var square = x => x * x; // if only one parameter and single statement.
+
+    //Classes
+    class Car{
+        // constructor(){
+        //     this.name = "i10";
+        //     this.speed = 20;
+        // }
+
+        //or using default parameters
+        constructor(name= "i10", speed="20"){
+            this.name = name;
+            this.speed = speed;
+        }
+
+        Accelerate(){
+            //console.log(this.name);
+            return this.name;
+        }
+
+    }
+
+    var carObj = new Car();
+    console.log(carObj.name,carObj.speed);
+    console.log(carObj.Accelerate());
+
+    //Class Inheritance
+    class JBCar extends Car{
+        constructor(name,speed,canFly){
+            super(name,speed); //this will call base class constructor
+            this.canFly = canFly;
+        }
+        Accelerate(){//ovverriding base class method
+            return super.Accelerate() + " here " + this.canFly;
+        }
+    }
+
+    var jbc = new JBCar("A M",200,true);
+    console.log(jbc.canFly,jbc.name, jbc.speed)
+    console.log(jbc.Accelerate());
+
+</script>

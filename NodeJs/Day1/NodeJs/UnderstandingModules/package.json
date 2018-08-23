@@ -1,0 +1,14 @@
+{
+  "name": "understandingmodules",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "jasmine": "^3.2.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "karma": "^3.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

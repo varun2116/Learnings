@@ -1,0 +1,29 @@
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+    // create socket connection
+    //listen to socket
+    var socket;
+
+    function calledOnLoad(){
+        socket = io.connect();
+
+        socket.on('messageForClientPeer', (dataFromServer) => {
+            console.log(dataFromServer);
+        })
+    }
+
+    function sendMsg(){
+        var msg = document.getElementById("txtMsg").value;
+        socket.emit("messageFromClientPeer",msg);
+    }
+
+</script>
+</head>
+<body onload="calledOnLoad()">
+<h1>Client peer</h1>
+
+<b>Message send : </b>
+<input type="text" id="txtMsg" />
+<input type="button" value="Send" onclick="sendMsg()" />
+</body>

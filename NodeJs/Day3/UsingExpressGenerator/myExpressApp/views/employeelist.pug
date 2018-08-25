@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  h3 List of Employees
+  if employeeList
+    ul
+        each employee in employeeList
+            li  #{employee.firstname} #{employee.lastname}
+  else
+    p No employees found

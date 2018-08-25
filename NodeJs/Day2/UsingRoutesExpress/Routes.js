@@ -9,7 +9,7 @@ router.route('/products/:name/:size').get((req, res) => {
     var products = [
         {name:'Mobile', price:3000},
         {name:'LED', price:4000},
-        {name:'LCD', price:5000},
+        {name:'LCD', price:5000}
     ];
 
     var n = req.params.name; //read the parameters
